@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { MovieDataType } from "../../types/types";
 import { MovieContext } from "../../context/MovieContext";
 import { Box, Card, CardContent, Grid, Stack, Typography } from "@mui/material";

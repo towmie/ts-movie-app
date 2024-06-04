@@ -1,8 +1,6 @@
-import { Box, Hidden, Typography } from "@mui/material";
-import { BiCameraMovie } from "react-icons/bi";
+import { Box, Typography } from "@mui/material";
 import { FaRegBookmark } from "react-icons/fa";
-import { PiSquaresFour, PiSquaresFourThin } from "react-icons/pi";
-import { RiMovie2Line } from "react-icons/ri";
+import { PiSquaresFour } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 const navLinks = [
@@ -10,14 +8,7 @@ const navLinks = [
     name: "Home",
     link: "/",
   },
-  {
-    name: "Movies",
-    link: "/movies",
-  },
-  {
-    name: "TV-series",
-    link: "/tv-series",
-  },
+
   {
     name: "Bookmarks",
     link: "/bookmark",
@@ -94,8 +85,6 @@ export default function Sidebar() {
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <Box sx={{ width: "20px", height: "20px" }}>
                   {link.name === "Home" && <PiSquaresFour />}
-                  {link.name === "Movies" && <RiMovie2Line />}
-                  {link.name === "TV-series" && <BiCameraMovie />}
                   {link.name === "Bookmarks" && <FaRegBookmark />}
                 </Box>
                 <Box

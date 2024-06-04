@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: "/bookmarks",
+    path: "/bookmark",
     element: <Bookmarks />,
     errorElement: <Error />,
   },

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { ReactNode } from "react";
-import Sidebar from "../ui/Sidebar";
+import Sidebar from "./../ui/Sidebar";
 
 type PageLayoutProps = {
   children: ReactNode;

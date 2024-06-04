@@ -15,7 +15,7 @@ import RecommendedList from "../features/movieLists/RecommendedList";
 
 export default function Home() {
   const [searchQuery, setSearch] = useState("");
-  const [searchList, setSearchList] = useState<MovieDataType[] | null>(null);
+  const [searchList, setSearchList] = useState<MovieDataType[]>([]);
   const { state } = useContext(MovieContext);
   const { movies } = state;
 
@@ -47,7 +47,12 @@ export default function Home() {
               placeholder="Search..."
               value={searchQuery}
               onChange={handleSearch}
-              sx={{ color: "#fff", marginLeft: 1, fontSize: "16px" }}
+              sx={{
+                color: "#fff",
+                marginLeft: 1,
+                fontSize: "16px",
+                width: "100%",
+              }}
               startAdornment={
                 <InputAdornment position="start">
                   <IoMdSearch
