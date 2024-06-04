@@ -12,7 +12,7 @@ export interface MovieDataType {
       large: string;
     };
   };
-  year: Date;
+  year: number;
   category: string;
   rating: string;
   isBookmarked: boolean;

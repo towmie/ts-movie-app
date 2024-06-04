@@ -1,10 +1,24 @@
-import React from "react";
+import { Box, Grid, Paper } from "@mui/material";
 
-type RecommendedListProps = {
-  recommendedList: any;
+import { MovieDataType } from "../../types/types";
+import MovieCard from "./MovieCard";
+
+type TrendingListProps = {
+  recommendedList: MovieDataType[];
 };
+
 export default function RecommendedList({
   recommendedList,
-}: RecommendedListProps) {
-  return <div>RecommendedList</div>;
+}: TrendingListProps) {
+  return (
+    <Box sx={{ display: "flex", gap: 2, overflowX: "scroll" }}>
+      {recommendedList.map((movie) => (
+        <Grid item key={movie.id}>
+          <Paper elevation={0} sx={{ backgroundColor: "transparent" }}>
+            <MovieCard movie={movie} />
+          </Paper>
+        </Grid>
+      ))}
+    </Box>
+  );
 }

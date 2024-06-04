@@ -160,7 +160,7 @@ export const moviesData = [
     year: 2019,
     category: "Movie",
     rating: "E",
-    isBookmarked: false,
+    isBookmarked: true,
     isTrending: false,
   },
   {

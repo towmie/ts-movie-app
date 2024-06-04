@@ -6,14 +6,28 @@ import {
   Typography,
 } from "@mui/material";
 import PageLayout from "../layout/PageLayout";
-import { useState, SetStateAction } from "react";
+import { useState, SetStateAction, useContext } from "react";
 import { IoMdSearch } from "react-icons/io";
 import TrendingList from "../features/movieLists/TrendingList";
+import { MovieDataType } from "../types/types";
+import { MovieContext } from "../context/MovieContext";
+import RecommendedList from "../features/movieLists/RecommendedList";
 
 export default function Home() {
   const [searchQuery, setSearch] = useState("");
+  const [searchList, setSearchList] = useState<MovieDataType[] | null>(null);
+  const { state } = useContext(MovieContext);
+  const { movies } = state;
+
+  const trendingList = movies.filter((item) => item.isTrending === true);
+  const recommendedList = movies.filter((item) => item.isTrending !== true);
+
   function handleSearch(e: { target: { value: SetStateAction<string> } }) {
     setSearch(e.target.value);
+    const newList = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchList(newList);
   }
   return (
     <PageLayout>
@@ -45,7 +59,7 @@ export default function Home() {
           </Paper>
         </Box>
         <Box py={2} px={4}>
-          {searchQuery ? (
+          {searchQuery === "" ? (
             <Box width="100%">
               <Box width="100%">
                 <Typography
