@@ -11,9 +11,13 @@ export default function RecommendedList({
   recommendedList,
 }: TrendingListProps) {
   return (
-    <Box sx={{ display: "flex", gap: 2, overflowX: "scroll" }}>
+    <Box sx={{ display: "flex", overflowX: "scroll", flexWrap: "wrap" }}>
       {recommendedList.map((movie) => (
-        <Grid item key={movie.id}>
+        <Grid
+          item
+          key={movie.id}
+          sx={{ width: { xs: "100%", md: "50%", lg: "33%" } }}
+        >
           <Paper elevation={0} sx={{ backgroundColor: "transparent" }}>
             <MovieCard movie={movie} />
           </Paper>

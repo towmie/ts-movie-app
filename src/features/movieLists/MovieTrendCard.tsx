@@ -56,7 +56,7 @@ export default function MovieTrendCard({ movie }: MovieTrendCard) {
             </Grid>
 
             <Grid item>
-              {movie.category === "Movies" ? (
+              {movie.category === "Movie" ? (
                 <RiMovie2Line color="#fff" />
               ) : (
                 <BiCameraMovie color="#fff" />

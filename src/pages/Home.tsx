@@ -88,7 +88,10 @@ export default function Home() {
             </Box>
           ) : (
             <Box width="100%">
-              <Typography>Found</Typography>
+              <Typography>
+                Found {searchList?.length} results for "{searchQuery}"
+              </Typography>
+              <RecommendedList recommendedList={searchList} />
             </Box>
           )}
         </Box>
